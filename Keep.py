@@ -1,24 +1,28 @@
 from flask import Flask, render_template, request
 from threading import Thread
+import Process
 app = Flask('app')
-
+link =""
 @app.route("/delete",methods = ["POST","GET"])
 def delete():
   if request.method == "POST":
-    link = request.form['LinkID']
-    print(link)
-  elif "LinkID" in request.args:
-    print(request.args['LinkID'])
+    linkID = request.form['LinkID'].strip()
+    print(linkID)
   return render_template("Delete.html")
 
 
 @app.route('/')
 def hello_world():
-  return "hello"
+  return "Ping here."
 
-@app.route('/add')
+@app.route('/add',methods = ['POST','GET'])
 def adding():
-  return "adding interface"
+  if request.method == "POST":
+    link = request.form['link']
+    if not "https://" in link:
+      link = "https://"  +  link
+    print(link,Process.link_filter(link))
+  return render_template("Add.html")
 
 def host():
   app.run(host='0.0.0.0', port=8080)
