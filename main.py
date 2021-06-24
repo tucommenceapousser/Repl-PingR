@@ -1,6 +1,6 @@
 import requests, time, Keep, os, random
 from replit import db
-#NEED TO MAKE THIS A HTML INTERFACE
+#NEED TO MAKE THIS A HTML INTERFACE. basics done. this works
 Server = 1
 os.system('clear')
 def ping():
