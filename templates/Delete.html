@@ -5,13 +5,17 @@
   </title>
 </head>
 <body bgcolor="black">
-  <font color = "white" size ="4">
-    <h1>Repl pinger</h1><p align="right"> By- Quantumcodes </p>
-    <hr size=15>
-    <form>
-      <label for="ID">Link ID: </label>
-      <input type="text" align="top" id="ID" name="LinkID" placeholder="Type Link ID" style="height: 20px; width:300px"><br>
-      
+  <font color = "white" size ="5">
+    <h1><center><b><u>Repl Pinger</u></b></center></h1><p align="right"> By- Quantumcodes </p>
+    <hr size=2 style="color:green;">
+    <h3><p align="center"><u>Delete link page</u></p></h3>
+    <hr size="1">
+    <br>
+    <br>
+    <form align="center" action ="/delete" method="POST">
+      <label for="ID" align="bottom">Link ID: </label>
+      <input type="text" align="top" id="ID" name="LinkID" placeholder="Type Link ID" style="height: 20px; width:250px"><br>
+      <input type="submit" value="verify" style="height:30px; width:60px"><input type="reset" value="clear" style="height:30px; width:60px">
     </form>
   </font>
 </body>
