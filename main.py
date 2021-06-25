@@ -1,6 +1,5 @@
 import requests, time, Keep, os, random
 from replit import db
-#REPLACE FLASK WITH REPLIT WEB
 Server = 1
 os.system('clear')
 def ping():
