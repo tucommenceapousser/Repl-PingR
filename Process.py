@@ -32,3 +32,12 @@ def add_db(ID,link):
     return "added"
   except Exception as e:
     return e
+
+def find_ID(ID):
+  if ID in db.keys():
+    return db[ID]
+  else:
+    return "error"
+
+def delete_link(ID):
+  del db[ID]

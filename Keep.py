@@ -1,14 +1,25 @@
 from flask import Flask, render_template, request
 from threading import Thread
 import Process
-from Process import check_dupes, generateID, add_db
+from Process import check_dupes, generateID, add_db, find_ID, delete_link
 app = Flask('app')
 link =""
 @app.route("/delete",methods = ["POST","GET"])
 def delete():
-  if request.method == "POST":
+  if request.method == "POST" and "LinkID" in request.form:
+    global linkID
     linkID = request.form['LinkID'].strip()
-    print(linkID)
+    status = find_ID(linkID)
+    if status == "error":
+      return render_template("DeleteError.html",error="Link ID not found",title = " error")
+    else:
+      return render_template("DeleteConfirm.html", thelink = status)
+  elif request.method == "POST" and "options" in request.form:
+    if request.form["options"] == "Yes":
+      delete_link(linkID)
+      return render_template('DeleteError.html',error="Link successfully deleted!",title=" ")
+    else:
+      return render_template("DeleteError.html",error="The link wasn't deleted as you opted for it.",title=" error")
   return render_template("Delete.html")
 
 
@@ -19,7 +30,7 @@ def hello_world():
 @app.route('/add',methods = ['POST','GET'])
 def adding():
   if request.method == "POST":
-    link = request.form['link']
+    link = request.form['link'].strip()
     if not "https://" in link:
       link = "https://"  +  link
       link_status = Process.link_filter(link)
