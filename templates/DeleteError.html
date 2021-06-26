@@ -9,9 +9,16 @@
     <h3><p align="center"><u>Delete link{{title}} page</u></p></h3>
     <hr size="1">
     <br>
+    {% if title == " " %}
+      <center><img src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png">
+      <p><small>Image by www.freeiconspng.com</small></p>
+      </center>
+    {% else %}
+      <center><img src="https://www.pinclipart.com/picdir/big/549-5497548_no-symbol-clip-art-circle-transparent-x-mark.png" height="400px"><br><small>Image by www.pinclipart.com</small></center>
+    {% endif %}
     <br>
     <font size="4">
-    <p align="center">{{error}}<br><a href="https://repl-pinger.quantumcodes.repl.co/delete">You may retry again.</a></p>
+    <p align="center">{{error}}<br><a href="https://repl-pinger.quantumcodes.repl.co/delete">Back to delete page? click here.</a><br>Want to <a href="https://repl-pinger.quantumcodes.repl.co/add">add</a> instead?</p>
     </font></font>
 </body>
 </html>

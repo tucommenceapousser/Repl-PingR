@@ -36,10 +36,10 @@ def adding():
       link_status = Process.link_filter(link)
     print(link,link_status)
     if link_status == "error":
-      return render_template("ErrorAdd.html")
+      return render_template("ErrorAdd.html", error="Seems like either your repl isnt running/ this isnt a repl link or there is a typo.")
     else:
       if check_dupes(link) == "error":
-        return "Link already exists"
+        return render_template("ErrorAdd.html",error="Link already added.")
       else:
         ID = generateID()
         add = add_db(ID,link)
