@@ -1,4 +1,3 @@
-# .gitignore
 venv/
 .replit
 replit.nix
