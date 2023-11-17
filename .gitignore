@@ -1,0 +1,7 @@
+# .gitignore
+venv/
+.replit
+replit.nix
+__pycache__/
+.mypy_cache/
+*.pyc
