@@ -1,19 +1,23 @@
 <!DOCTYPE html>
+<html>
 <head>
   <title>Add-repl pinger</title>
 </head>
 <body bgcolor="black" alink="#348ceb" vlink="#348ceb" link="#348ceb">
   <font color="#f2f2f2" size="5">
-       <h2><center><b><u>Repl Pinger</u></b></center></h2><font size = 3><p align="right"> By- Quantumcodes    </p></font>
+    <h2><center><b><u>Repl Pinger</u></b></center></h2>
+    <font size="3"><p align="right">By- trhacknon</p></font>
     <hr size=1>
-    <h3><p align="center"><u>Adding Succesful</u></p></h3>
+    <h3><p align="center"><u>Adding Successful</u></p></h3>
     <hr size="1">
     <br>
-    <center><img src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png">
-    </center>
+    <center><img src="https://www.freeiconspng.com/uploads/success-icon-11.png"></center>
     <br>
     <font size="3">
-    <p align="center">{{link}} Successfully added!<b><br>Your link ID: {{ID}}</b><br> Keep this number safe as this will allow you to <a href="https://repl-pinger.quantumcodes.repl.co/delete">delete</a> the link from this pinger<br>It will be pinged every 1 second or more.<br>Want to <a href="https://repl-pinger.quantumcodes.repl.co/add">add</a> another? or <a href="https://repl-pinger.quantumcodes.repl.co/delete">delete?</a><br><a href="https://www.freeiconspng.com/images/success-icon">image from here</a></p>
-    </font></font>
+      {% for link_info in links %}
+        <p align="center">{{ link_info.link }} Successfully added!<b><br>Your link ID: {{ link_info.ID }}</b><br> Keep this number safe as this will allow you to <a href="https://repl-pinger-trkn.replit.app/delete">delete</a> the link from this pinger.<br>It will be pinged every 5 seconds or more.<br>Want to <a href="https://repl-pinger-trkn.replit.app/add">add</a> another? or <a href="https://repl-pinger-trkn.replit.app/delete">delete?</a> | <a href="https://repl-pinger-trkn.replit.app/id">View all IDs</a><br><a href="https://www.freeiconspng.com/images/success-icon">Image from here</a></p>
+      {% endfor %}
+    </font>
+  </font>
 </body>
 </html>

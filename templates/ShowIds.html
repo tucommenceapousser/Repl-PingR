@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID Viewer</title>
+</head>
+<body bgcolor="black" alink="#348ceb" vlink="#348ceb" link="#348ceb">
+    <font color="#f2f2f2" size="5">
+        <h2><center><b><u>ID Viewer</u></b></center></h2>
+        <font size="3"><p align="right">By- trhacknon</p></font>
+        <hr size=1>
+        <h3><p align="center"><u>IDs and URLs</u></p></h3>
+        <hr size="1">
+        <br>
+        <font size="3">
+            <ul>
+                {% for entry in id_list %}
+                    <li>
+                        <span style="color: #4285f4;">ID:</span> {{ entry.ID }} |
+                        <span style="color: #0f9d58;">URL:</span> {{ entry.URL }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </font>
+    </font>
+</body>
+</html>

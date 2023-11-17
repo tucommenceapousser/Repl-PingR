@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from threading import Thread
-import Process
-from Process import check_dupes, generateID, add_db, find_ID, delete_link
+from Process import check_dupes, generateID, add_db, find_ID, delete_link, link_filter
 app = Flask('app')
 link =""
 @app.route("/delete",methods = ["POST","GET"])
@@ -25,7 +24,7 @@ def delete():
 
 @app.route('/')
 def hello_world():
-  return "Ping here."
+  return "Ping here. what are you doing here btw? go to pages of this: /delete and  /add ."
 
 @app.route('/add',methods = ['POST','GET'])
 def adding():
@@ -33,7 +32,7 @@ def adding():
     link = request.form['link'].strip()
     if not "https://" in link:
       link = "https://"  +  link
-      link_status = Process.link_filter(link)
+    link_status = link_filter(link)
     print(link,link_status)
     if link_status == "error":
       return render_template("ErrorAdd.html", error="Seems like either your repl isnt running/ this isnt a repl link or there is a typo.")
