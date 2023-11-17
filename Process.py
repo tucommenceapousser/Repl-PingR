@@ -1,14 +1,16 @@
 import requests, random
 from replit import db
+
 def link_filter(link):
-  if "repl.co" in link:
-    try:
-      requests.get(link,timeout=2)
-      return "good"
-    except:
-      return "error"
+  if "replit.app" in link or "repl.co" in link:
+      try:
+          requests.get(link, timeout=2)
+          return "good"
+      except:
+          return "error"
   else:
-    return "error"
+      return "error"
+
 
 def check_dupes(link):
   status = "Good"

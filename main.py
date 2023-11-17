@@ -1,4 +1,4 @@
-import requests, time, Keepp, os, random
+import requests, time, Keep, os, random
 from replit import db
 #ADD IF LOOP IN ERROR DELETE PAGE. WHEN LINK DELETED, SHOW IMAGE
 Server = 1
@@ -27,7 +27,7 @@ def ping():
       time.sleep(240 - timing)
 
 if Server == 1:
-  Keepp.alive()
+  Keep.alive()
   ping()
 else:
   print("server is off...")
