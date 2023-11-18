@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, render_template_string
 from threading import Thread
 from Process import check_dupes, generateID, add_db, find_ID, delete_link, link_filter
 from urllib.parse import urlparse
-import requests, random, time, Keepp, os
+import requests, random, time, Keep, os
 from replit import db
 
 app = Flask('app')
@@ -105,7 +105,7 @@ def adding():
                     if add == "added":
                         valid_links.append({"link": link, "ID": ID})
 
-                        # Save ID and URL to id.txt
+                        # Save ID and URL to id.txt with a delimiter
                         with open("id.txt", "a") as id_file:
                             id_file.write(f"{ID} {link}\n")
 
